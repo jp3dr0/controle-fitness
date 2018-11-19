@@ -1,26 +1,30 @@
 <section class="container" fxLayoutAlign="center">
-  <mat-card fxFlex="400px" fxFlex.xs="100%">
-
-    <mat-card-title-group fxLayoutAlign="center">
-      <mat-card-title>Hora de iniciar um exercício!</mat-card-title>
-    </mat-card-title-group>
-    <mat-card-content fxLayoutAlign="center">
-      <mat-form-field>
-        <mat-select placeholder="Escolha o treino" required floatPlaceholder="always">
-          <!--
-          <mat-option *ngFor="let choice of choices" [value]="choice">
-            choice
-          </mat-option>
-        -->
-          <mat-option value="crunches">Crunches</mat-option>
-          <mat-option value="touch-toes">Touch Toes</mat-option>
-          <mat-option value="side-lunges">Side Lunges</mat-option>
-          <mat-option value="burpees">Burpees</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </mat-card-content>
-    <mat-card-actions align="center">
-      <button mat-button type="submit" (click)="onClickIniciar()">Iniciar</button>
-    </mat-card-actions>
-  </mat-card>
+  <form #f="ngForm" (ngSubmit)="onClickIniciar(f)">
+    <mat-card fxFlex="400px" fxFlex.xs="100%">
+      <mat-card-title-group fxLayoutAlign="center">
+        <mat-card-title>Hora de iniciar um exercício!</mat-card-title>
+      </mat-card-title-group>
+      <mat-card-content fxLayoutAlign="center">
+        <mat-form-field>
+          <mat-select
+            placeholder="Escolha o treino"
+            required
+            floatPlaceholder="always"
+            name="exercicioSelect"
+            ngModel
+          >
+            <mat-option
+              *ngFor="let exercicio of exercicios"
+              [value]="exercicio.id"
+            >
+              {{ exercicio.nome }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions align="center">
+        <button mat-button type="submit" [disabled]="f.invalid">Iniciar</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
 </section>

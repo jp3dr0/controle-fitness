@@ -1,3 +1,46 @@
-<p>
-  treinos-anteriores works!
-</p>
+<div fxLayoutAlign="center center">
+  <mat-form-field fxFlex="60%">
+    <input
+      matInput
+      type="text"
+      placeholder="Filtrar"
+      (keyup)="filtrar($event.target.value)"
+    />
+  </mat-form-field>
+</div>
+
+<mat-table [dataSource]="dataSource" matSort>
+  <ng-container matColumnDef="data">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Data</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.data | date }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="nome">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Nome</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.nome }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="calorias">
+    <mat-header-cell *matHeaderCellDef mat-sort-header
+      >Calorias</mat-header-cell
+    >
+    <mat-cell *matCellDef="let element">{{
+      element.calorias | number
+    }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="duracao">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Duração</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{
+      element.duracao | number
+    }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="estado">
+    <mat-header-cell *matHeaderCellDef>Estado</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.estado }}</mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>

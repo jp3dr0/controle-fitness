@@ -1,3 +1,4 @@
+import { AuthService } from "./../../../services/auth.service";
 import { Component, OnInit } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import * as moment from "moment";
@@ -10,7 +11,7 @@ import * as moment from "moment";
 export class SignupComponent implements OnInit {
   dataMaxima: moment.Moment;
 
-  constructor() {
+  constructor(private authService: AuthService) {
     this.dataMaxima = moment();
     // a pessoa deve ter no minimo 18 anos
     this.dataMaxima.year(this.dataMaxima.year() - 18);
@@ -20,5 +21,9 @@ export class SignupComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     console.log(form);
+    this.authService.registrarUsuario({
+      email: form.value.email,
+      senha: form.value.senha
+    });
   }
 }

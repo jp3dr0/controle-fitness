@@ -18,7 +18,7 @@ export class PararTreinoComponent implements OnInit {
   progress = 0;
   timer: number;
 
-  constructor(@Inject(MAT_DIALOG_DATA) private passedData: any) {}
+  constructor(@Inject(MAT_DIALOG_DATA) public passedData: any) {}
 
   ngOnInit() {}
 }
