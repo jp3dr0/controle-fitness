@@ -623,11 +623,15 @@ THE SOFTWARE.
 
 @angular/material/tabs
 
+@angular/material/core
+
 @angular/material/card
 
 @angular/material/select
 
-@angular/material/core
+@angular/material/sort
+
+@angular/material/table
 
 @angular/material/progress-spinner
 
