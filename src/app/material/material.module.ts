@@ -9,7 +9,12 @@ import {
   MatCheckboxModule,
   MatSidenavModule,
   MatToolbarModule,
-  MatListModule
+  MatListModule,
+  MatTabsModule,
+  MatCardModule,
+  MatSelectModule,
+  MatProgressSpinnerModule,
+  MatDialogModule
 } from "@angular/material";
 
 import { MatMomentDateModule } from "@angular/material-moment-adapter";
@@ -25,7 +30,12 @@ import { MatMomentDateModule } from "@angular/material-moment-adapter";
     MatCheckboxModule,
     MatSidenavModule,
     MatToolbarModule,
-    MatListModule
+    MatListModule,
+    MatTabsModule,
+    MatCardModule,
+    MatSelectModule,
+    MatProgressSpinnerModule,
+    MatDialogModule
   ],
   exports: [
     MatButtonModule,
@@ -36,7 +46,12 @@ import { MatMomentDateModule } from "@angular/material-moment-adapter";
     MatCheckboxModule,
     MatSidenavModule,
     MatToolbarModule,
-    MatListModule
+    MatListModule,
+    MatTabsModule,
+    MatCardModule,
+    MatSelectModule,
+    MatProgressSpinnerModule,
+    MatDialogModule
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: "pt-BR" }]
 })

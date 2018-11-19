@@ -1,3 +1,9 @@
-<p>
-  treino works!
-</p>
+<mat-tab-group *ngIf="!treinoAcontecendo">
+  <mat-tab label="Novo treino">
+    <app-novo-treino (iniciarTreino)="treinoAcontecendo = true"></app-novo-treino>
+  </mat-tab>
+  <mat-tab label="Treinos anteriores">
+    <app-treinos-anteriores></app-treinos-anteriores>
+  </mat-tab>
+</mat-tab-group>
+<app-treino-atual *ngIf="treinoAcontecendo" (sairTreino)="treinoAcontecendo = false"></app-treino-atual>

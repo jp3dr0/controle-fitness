@@ -1,3 +1,4 @@
+import { PararTreinoComponent } from "./components/treino/treino-atual/parar-treino.component";
 import { HomeComponent } from "./components/home/home.component";
 import { AppRoutingModule } from "./app-routing/app-routing.module";
 import { BrowserModule } from "@angular/platform-browser";
@@ -30,7 +31,8 @@ import { SidenavListComponent } from "./navigation/sidenav-list/sidenav-list.com
     TreinosAnterioresComponent,
     HeaderComponent,
     SidenavListComponent,
-    HomeComponent
+    HomeComponent,
+    PararTreinoComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +44,7 @@ import { SidenavListComponent } from "./navigation/sidenav-list/sidenav-list.com
     DndModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [PararTreinoComponent]
 })
 export class AppModule {}

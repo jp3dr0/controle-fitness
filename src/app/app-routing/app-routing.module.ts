@@ -1,3 +1,4 @@
+import { TreinoAtualComponent } from './../components/treino/treino-atual/treino-atual.component';
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { HomeComponent } from "../components/home/home.component";
@@ -9,7 +10,9 @@ const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "registrar", component: SignupComponent },
   { path: "login", component: LoginComponent },
-  { path: "treino", component: TreinoComponent }
+  { path: "treino", component: TreinoComponent },
+  { path: "treino-atual", component: TreinoAtualComponent },
+
 ];
 
 @NgModule({
